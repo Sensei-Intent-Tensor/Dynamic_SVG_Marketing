@@ -276,8 +276,8 @@ def random_face():
     '''
 
 if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))
     print("🎨 Infinite Faces Server Starting...")
-    print("📍 Access the gallery at: http://localhost:5000")
-    print("📍 Get a random face at: http://localhost:5000/random")
-    print("📍 Direct SVG access: http://localhost:5000/face.svg?seed=YOUR_SEED")
-    app.run(debug=True, port=5000)
+    print(f"📍 Server will run on port: {port}")
+    app.run(host='0.0.0.0', port=port, debug=False)
